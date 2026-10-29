@@ -1,0 +1,2 @@
+# authentication/urls.py
+urlpatterns = []

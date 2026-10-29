@@ -1,0 +1,26 @@
+# Local-only Docker override — must NOT be deployed to the VPS
+docker-compose.override.yml
+
+# Environment secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+*.egg-info/
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Certbot live certs/keys (issued directly on the VPS, not tracked in git)
+certbot/conf/
+certbot/www/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

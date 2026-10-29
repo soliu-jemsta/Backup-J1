@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Online | Mortgage2Match Financial Services</title>
+    <meta name="description" content="Book a free, no-obligation chat with Mortgage2Match Financial Services about your mortgage, protection or insurance needs.">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/m2m.gif" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="head-content">
+            <a href="index.html" id="branding">
+                <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo">
+                <span class="wordmark">Mortgage2Match<span>Financial Services</span></span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="book-online.html" class="active">Book Online</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="book-online.html" class="nav-cta">Book a Free Chat</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <span class="page-banner-mark match-mark">
+            <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo-banner">
+        </span>
+        <div class="page-banner-inner">
+            <span class="eyebrow eyebrow-light">Book Online</span>
+            <h1>Book your free, no-obligation chat</h1>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="info-grid">
+            <div class="form-panel">
+                <h2>Request an Appointment</h2>
+                <p>Tell us a little about what you need and your preferred time — we'll confirm your appointment by phone or email.</p>
+
+                <!--
+                    Form powered by Formspree (free tier — no backend required).
+                    1. Create a free account at https://formspree.io
+                    2. Create a new form and copy its endpoint, e.g. https://formspree.io/f/abcdwxyz
+                    3. Replace YOUR_FORM_ID below with that ID.
+
+                    Alternative: for live calendar availability instead of a request form,
+                    a free Calendly account can be embedded here instead.
+                -->
+                <form id="booking-form" action="https://formspree.io/f/xrpzpjvg" method="POST">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="b-name">Full Name</label>
+                            <input type="text" id="b-name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="b-email">Email Address</label>
+                            <input type="email" id="b-email" name="_replyto" placeholder="Your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="b-phone">Phone Number</label>
+                            <input type="tel" id="b-phone" name="phone" placeholder="Your phone number" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="b-topic">What Would You Like to Discuss?</label>
+                            <select id="b-topic" name="topic">
+                                <option>Mortgage Lending</option>
+                                <option>Protection For Life</option>
+                                <option>General Insurance</option>
+                                <option>Not Sure Yet</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="b-date">Preferred Date</label>
+                            <input type="date" id="b-date" name="preferred_date">
+                        </div>
+                        <div class="form-field">
+                            <label for="b-time">Preferred Time</label>
+                            <select id="b-time" name="preferred_time">
+                                <option>Morning (9am&ndash;12pm)</option>
+                                <option>Afternoon (12pm&ndash;5pm)</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="b-message">Anything Else We Should Know?</label>
+                        <textarea id="b-message" name="message" rows="4" placeholder="Please tell us more about your needs..."></textarea>
+                    </div>
+
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="_subject" value="New appointment request — Mortgage2Match website">
+
+                    <button type="submit" class="btn btn-brick btn-block">Request Appointment</button>
+                    <p class="form-note">This request goes directly to our team — we'll be in touch to confirm a time that works.</p>
+                </form>
+            </div>
+
+            <div class="info-stack">
+                <div class="info-card">
+                    <h3>Prefer to Talk Directly?</h3>
+                    <ul class="info-links">
+                        <li><a href="tel:01443491107"><i class="fa-solid fa-phone"></i> 01443 491 107</a></li>
+                        <li><a href="mailto:admin@mortgage2match.com"><i class="fa-solid fa-envelope"></i> admin@mortgage2match.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>What Happens Next</h4>
+                    <ul class="info-links" style="gap: 16px;">
+                        <li style="font-weight: 400; color: var(--ink-soft);"><i class="fa-solid fa-check" style="color: var(--forest-600);"></i> We confirm your appointment by phone or email</li>
+                        <li style="font-weight: 400; color: var(--ink-soft);"><i class="fa-solid fa-check" style="color: var(--forest-600);"></i> We have a free, no-obligation chat about your goals</li>
+                        <li style="font-weight: 400; color: var(--ink-soft);"><i class="fa-solid fa-check" style="color: var(--forest-600);"></i> We search the whole market and come back with options</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>Office Hours</h4>
+                    <ul class="hours-list">
+                        <li>Monday&ndash;Friday <span>9am to 5pm</span></li>
+                        <li>Saturday <span>By appointment</span></li>
+                        <li>Sunday <span>Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="mar-container">
+        <marquee class="marquee-mobile">
+            <span>Your home may be repossessed if you do not keep up repayments on your mortgage.</span>
+            <span>Most buy-to-let mortgages are not regulated by the Financial Conduct Authority.</span>
+        </marquee>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="wordmark">
+                        <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo">
+                        Mortgage2Match
+                    </div>
+                    <p>Independent mortgage, protection and insurance advice for clients across England, Wales, Scotland and Northern Ireland.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/mortgage2match" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/m2mfs/" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="book-online.html">Book Online</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <div class="footer-contact">
+                        <a href="tel:01443491107"><i class="fa-solid fa-phone"></i> 01443 491 107</a>
+                        <a href="mailto:admin@mortgage2match.com"><i class="fa-solid fa-envelope"></i> admin@mortgage2match.com</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="footer-legal">
+                <p>
+                    Mortgage2Match Financial Services is a trading name of Stanley Adekola, authorised and regulated by the Financial Conduct Authority (registration number 811337). Registered office: Business Development Centre, Ty Cynon House, Navigation Park, Abercynon, Mountain Ash, Rhondda Cynon Taff CF45 4SN.
+                </p>
+                <ul class="footer-legal-links">
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="complaints-handling.html">Complaint Handling Procedures</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="privacy-notice.html">Privacy Notice</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+
+            <p id="tm">&copy; 2026 Mortgage2Match Financial Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

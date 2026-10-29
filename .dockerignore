@@ -1,0 +1,9 @@
+certbot/
+.git/
+.gitignore
+__pycache__/
+*.pyc
+venv/
+.env
+media/
+*.log

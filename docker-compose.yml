@@ -1,0 +1,138 @@
+services:
+  app:
+    build: .
+    container_name: jemsta_django
+    command: >
+      sh -c "
+      python manage.py migrate &&
+      gunicorn jemsta_backend.wsgi:application
+      --bind 0.0.0.0:8000
+      --workers 2
+      --threads 2
+      --timeout 120
+      --access-logfile -
+      --error-logfile -
+      "
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+    volumes:
+      - ./media:/app/media
+    networks:
+      - jemsta-net
+
+  db:
+    image: mysql:8.0
+    container_name: jemsta_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - jemsta_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 1s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: always
+    networks:
+      - jemsta-net
+
+  db-backup:
+    build: ./backup
+    container_name: jemsta-db-backup
+    restart: unless-stopped
+    init: true
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_SERVER: db
+      DB_PORT: "3306"
+      DB_USER: ${MYSQL_BACKUP_USER}
+      DB_PASS: ${MYSQL_BACKUP_PASS}
+      DB_NAME: ${DATABASE_NAME}
+      TZ: Europe/London
+    volumes:
+      - jemsta-db-backups:/backup
+      - "C:/Users/Administrator/OneDrive - Jemsta UK Limited/JemstaBackups:/onedrive"
+    networks:
+      - jemsta-net
+
+  nginx-proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+    depends_on:
+      - app
+      - jemsta-frontend
+      - jemsta-frontend-ng
+      - mortgage2match-frontend
+      - jemsta-groups
+    restart: always
+    networks:
+      - jemsta-net
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    # Renews certs every 12h if due; container just sleeps otherwise
+    entrypoint: >
+      sh -c "trap exit TERM;
+      while :; do
+        certbot renew --webroot -w /var/www/certbot;
+        sleep 12h & wait $${!};
+      done"
+    networks:
+      - jemsta-net
+
+  jemsta-frontend:
+    build: ./jemsta-frontend
+    container_name: jemsta-frontend
+    restart: always
+    networks:
+      - jemsta-net
+
+  jemsta-frontend-ng:
+    build: ./jemsta-frontend-ng
+    container_name: jemsta-frontend-ng
+    restart: always
+    networks:
+      - jemsta-net
+
+  mortgage2match-frontend:
+    build: ./Mortgage2match-frontend
+    container_name: mortgage2match-frontend
+    restart: always
+    networks:
+      - jemsta-net
+
+  jemsta-groups:
+    build: ./jemsta-groups
+    container_name: jemsta-groups
+    restart: always
+    networks:
+      - jemsta-net
+
+volumes:
+  jemsta_mysql:
+  jemsta-db-backups:
+
+networks:
+  jemsta-net:
+    driver: bridge

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Mortgage2Match Financial Services</title>
+    <meta name="description" content="Get in touch with Mortgage2Match Financial Services by phone, email, or our contact form — or find us on Facebook and LinkedIn.">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/m2m.gif" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="head-content">
+            <a href="index.html" id="branding">
+                <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo">
+                <span class="wordmark">Mortgage2Match<span>Financial Services</span></span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="book-online.html" class="nav-cta">Book a Free Chat</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <span class="page-banner-mark match-mark">
+            <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo-banner">
+        </span>
+        <div class="page-banner-inner">
+            <span class="eyebrow eyebrow-light">Contact Us</span>
+            <h1>Ready to explore your options?</h1>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="info-grid">
+            <div class="form-panel">
+                <h2>Send Us a Message</h2>
+                <p>Have a question or want to explore your options? Send us a message and we'll get back to you as soon as possible.</p>
+
+                <!--
+                    Form powered by Formspree (free tier — no backend required).
+                    1. Create a free account at https://formspree.io
+                    2. Create a new form and copy its endpoint, e.g. https://formspree.io/f/abcdwxyz
+                    3. Replace YOUR_FORM_ID below with that ID.
+                -->
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="c-name">Full Name</label>
+                            <input type="text" id="c-name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="c-email">Email Address</label>
+                            <input type="email" id="c-email" name="_replyto" placeholder="Your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="c-phone">Phone Number</label>
+                            <input type="tel" id="c-phone" name="phone" placeholder="Your phone number">
+                        </div>
+                        <div class="form-field">
+                            <label for="c-subject">Subject</label>
+                            <select id="c-subject" name="subject">
+                                <option>Mortgage Lending</option>
+                                <option>Protection For Life</option>
+                                <option>General Insurance</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="c-message">Message</label>
+                        <textarea id="c-message" name="message" rows="5" placeholder="Enter a message" required></textarea>
+                    </div>
+
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="_subject" value="New enquiry from Mortgage2Match website">
+
+                    <button type="submit" class="btn btn-brick btn-block">Send Message</button>
+                </form>
+            </div>
+
+            <div class="info-stack">
+                <div class="info-card">
+                    <h3>Reach Us Directly</h3>
+                    <ul class="info-links">
+                        <li><a href="tel:01443491107"><i class="fa-solid fa-phone"></i> 01443 491 107</a></li>
+                        <li><a href="mailto:admin@mortgage2match.com"><i class="fa-solid fa-envelope"></i> admin@mortgage2match.com</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Business+Development+Centre+Ty+Cynon+House+Navigation+Park+Abercynon+Mountain+Ash+CF45+4SN" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Ty Cynon House, Navigation Park, Abercynon, Mountain Ash CF45 4SN</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mortgage2match" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/m2mfs/" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h4>Office Hours</h4>
+                    <ul class="hours-list">
+                        <li>Monday&ndash;Friday <span>9am to 5pm</span></li>
+                        <li>Saturday <span>By appointment</span></li>
+                        <li>Sunday <span>Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="mar-container">
+        <marquee class="marquee-mobile">
+            <span>Your home may be repossessed if you do not keep up repayments on your mortgage.</span>
+            <span>Most buy-to-let mortgages are not regulated by the Financial Conduct Authority.</span>
+        </marquee>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="wordmark">
+                        <img src="./imgs/m2m.gif" alt="Mortgage2Match Financial Services logo" class="logo">
+                        Mortgage2Match
+                    </div>
+                    <p>Independent mortgage, protection and insurance advice for clients across England, Wales, Scotland and Northern Ireland.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/mortgage2match" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/m2mfs/" target="_blank" rel="noopener noreferrer" aria-label="Mortgage2Match on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="book-online.html">Book Online</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <div class="footer-contact">
+                        <a href="tel:01443491107"><i class="fa-solid fa-phone"></i> 01443 491 107</a>
+                        <a href="mailto:admin@mortgage2match.com"><i class="fa-solid fa-envelope"></i> admin@mortgage2match.com</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="footer-legal">
+                <p>
+                    Mortgage2Match Financial Services is a trading name of Stanley Adekola, authorised and regulated by the Financial Conduct Authority (registration number 811337). Registered office: Business Development Centre, Ty Cynon House, Navigation Park, Abercynon, Mountain Ash, Rhondda Cynon Taff CF45 4SN.
+                </p>
+                <ul class="footer-legal-links">
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="complaints-handling.html">Complaint Handling Procedures</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="privacy-notice.html">Privacy Notice</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+
+            <p id="tm">&copy; 2026 Mortgage2Match Financial Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
